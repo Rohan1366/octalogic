@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import data from'../Components/db.json'
 const Overview = () => {
   const [info, setInfo]=useState([])
   const[latest,setLatest]=useState([])
@@ -35,7 +36,7 @@ const Overview = () => {
            <p className='text-3xl text-zinc-700/50 font-medium mt-12 mb-10'>Overview</p>
       <div className='flex'>
        {
-        info.map((ele,index)=>{
+        data.info.map((ele,index)=>{
          return(
           <div className='shadow-lg h-32 w-64 p-3 rounded-md mr-6 bg-white' key={index}>
           <div className='flex '>
@@ -60,7 +61,7 @@ const Overview = () => {
       </div>
 
       
-      <table className='shadow-lg w-full bg-white pb-6'>
+      <table className='shadow-lg w-full bg-white pb-6 rounded-lg'>
         <thead className=''>
           <tr className=' border-b-2 '>
             <th className='pt-9 pb-4 '>Enr. No</th>
@@ -74,7 +75,7 @@ const Overview = () => {
           
           
           {
-            latest.map((ele,index)=>{
+            data.latest.map((ele,index)=>{
              return(
               <tr className='border-b-2' key={index}>
               <td className='text-center pb-4 '>{ele.enr}</td>
@@ -96,7 +97,7 @@ const Overview = () => {
       </div>
        
 
-      <table className='shadow-lg h-80 w-full bg-white pb-6 mb-12'>
+      <table className='shadow-lg h-80 w-full bg-white pb-6 mb-12 rounded-lg'>
         <thead className=''>
           <tr className=' border-b-2 '>
             <th className='pt-9 pb-4 '>Reg. No</th>
@@ -111,7 +112,7 @@ const Overview = () => {
           
           
           {
-            best.map((ele,index)=>{
+            data.best.map((ele,index)=>{
              return(
               <tr className='border-b-2' key={index}>
               <td className='text-center pb-4 '>{ele.enr}</td>

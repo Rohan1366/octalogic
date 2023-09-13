@@ -1,12 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import data from '../Components/db.json'
 const Courses = () => {
   const [state,setState]=useState([])
   const[col, setCol]=useState({
     text:"Active",
     bgColor: "green"
   })
+  const [showForm, setShowForm] = useState(false);
   useEffect(()=>{
     fetch("http://localhost:3000/courses")
     .then((res)=>res.json())
@@ -21,21 +23,22 @@ const Courses = () => {
         text:"Closed"
       })
   }
-  function handleForm(){
-    let answer = window.prompt("Are You Sure want to delete this product ? ");
-  }
+  
+  const toggleForm = () => {
+    setShowForm(!showForm);
+  };
   return (
-    <div className='h-screen ml-6'>
-      <p className='text-3xl text-zinc-700/50 font-medium mt-12 mb-10'>Overview</p>
-      <div className='mt-10 mb-12'>
-      <p className='text-1xl text-zinc-700/50 font-medium'>COURSE LIST</p>
+    <div className='h-full ml-6'>
+      <p className='text-3xl text-zinc-700/50 font-medium mt-12 mb-10'>Courses</p>
+      <div className='mt-10 mb-12 '>
+      <p className='text-1xl text-zinc-700/50 font-medium '>COURSE LIST</p>
        <div className='inset-y-0 right-0 text-right mr-6'>
-       <input placeholder='Search' className='rounded-lg '/>
+       <input placeholder='Search' className='rounded-lg pr-3 pl-3 pt-2 pb-2 '/>
        
        </div>
       </div>
 
-      <table className='shadow-lg w-full bg-white pb-6 mr-12'>
+      <table className='shadow-lg w-full bg-white pb-6 mr-12 rounded-lg'>
         <thead className=''>
           <tr className=' border-b-2 '>
             <th className='pt-9 pb-4 '>Name</th>
@@ -53,7 +56,7 @@ const Courses = () => {
           
           
           {
-            state.map((ele,index)=>{
+            data.courses.map((ele,index)=>{
              return(
               <tr className='border-b-2' key={index}>
               <td className='text-center pb-4 '>{ele.name}</td>
@@ -83,8 +86,85 @@ const Courses = () => {
         </tbody>
       </table>
 
+
+
+
+      {showForm && (
+        <div className="absolute inset-0 flex items-center justify-center z-10 bg-gray-800 bg-opacity-50">
+          <div className="bg-white p-4 rounded shadow-lg">
+            <form>
+              {/* Your form fields go here */}
+             <h2 className='text-2xl mb-4'>Add Courses</h2>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                className="border rounded w-full py-2 px-3 mb-2"
+                placeholder='Name'
+              />
+              
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder='Description'
+                className="border rounded w-full py-2 px-3 mb-2"
+              />
+              
+              <input
+                type="text"
+                id="name"
+                placeholder='Instructor'
+                name="name"
+                className="border rounded w-full py-2 px-3 mb-2"
+              />
+              <input
+                type="text"
+                id="name"
+                placeholder='Instrument'
+                name="name"
+                className="border rounded w-full py-2 px-3 mb-2"
+              />
+              <input
+                type="text"
+                id="name"
+                placeholder='Day Of Week'
+                name="name"
+                className="border rounded w-full py-2 px-3 mb-2"
+              />
+             
+               <input
+                type="text"
+                id="name"
+                placeholder='Price'
+                name="name"
+                className="border rounded w-full py-2 px-3 mb-2"
+              />
+             
+
+              {/* Add more form fields as needed */}
+              <div className="flex justify-end">
+                <button
+                  type="button"
+                  onClick={toggleForm}
+                  className="mr-2 px-4 py-2 text-gray-600 hover:bg-gray-200 rounded"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
      <div className='inset-y-0 right-0 text-right mr-6 mt-32'>
-     <button className='bg-red-200 p-4 shadow-lg rounded-md' onClick={handleForm}>+  Add Courses</button>
+     <button className='bg-red-200 p-4 shadow-lg rounded-md mb-12' onClick={toggleForm}>+  Add Courses</button>
      </div>
 
 

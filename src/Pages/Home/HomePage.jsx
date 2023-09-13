@@ -10,10 +10,10 @@ const HomePage = () => {
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZu9YYxGZL8zDlqs6Nd3ifIFrOrk2AD9upvffkzxF38w&s"
             alt="Your Company"
           />
-         <Link to='overview' className='mt-8 shadow-xl p-2 bg-red-400 ml-3 text-sm font-sans rounded-lg'> <span class="material-symbols-outlined">
+         <Link to='overview' className='mt-8 shadow-xl p-2 bg-red-200 ml-3 text-sm font-sans rounded-lg'> <span class="material-symbols-outlined">
            widgets
            </span>  Overview</Link>
-         <Link to='courses' className='mt-6 mt-8 shadow-xl p-2 bg-gray-500 ml-3 text-sm font-sans rounded-lg'>  
+         <Link to='courses' className='mt-6 mt-8 shadow-xl p-2 bg-gray-200 ml-3 text-sm font-sans rounded-lg'>  
          <span class="material-symbols-outlined w-6 h-6" >
           music_note
           </span>
