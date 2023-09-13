@@ -56,7 +56,7 @@ const Overview = () => {
 
       <div className='mt-10 mb-3'>
       <p className='text-1xl text-zinc-700/50 font-medium'>LATEST ENROLMENTS</p>
-       <p className='text-right text-red-800'>View All Courses</p>
+       <p className='text-right text-red-800 mr-6'>View All Courses</p>
       </div>
 
       
@@ -92,7 +92,7 @@ const Overview = () => {
 
       <div className='mt-10 mb-1'>
       <p className='text-1xl text-zinc-700/50 font-medium'>BEST STUDENTS</p>
-       <p className='text-right text-red-800'>View All Courses</p>
+       <p className='text-right text-red-800 mr-6'>View All Courses</p>
       </div>
        
 

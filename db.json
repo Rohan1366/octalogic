@@ -120,6 +120,100 @@
    
    
   ],
+  "courses": [
+    {
+      "id": 1,
+     
+      "name": "Guitar classes",
+      "instructor":"Jagatap",
+      "instrument":"Guitar",
+      "date":"Friday",
+      "fees":"$100",
+      "students":"34",
+      "description":"Guitar classes for....",
+      "status":"Active"
+
+    },
+    {
+      "id": 2,
+      
+      "name": "column",
+      "instructor":"column",
+      "date":"column",
+      "fees":"column",
+      "students":"20",
+      "instrument":"column",
+      "description":"column",
+      "status":"Active"
+
+    },
+    {
+      "id": 3,
+      
+      "name": "column",
+      "instructor":"column",
+      "date":"column",
+      "fees":"column",
+      "students":"20",
+      "instrument":"column",
+      "description":"column",
+      "status":"Active"
+
+    },
+    {
+      "id": 4,
+      
+      "name": "column",
+      "instructor":"column",
+      "date":"column",
+      "fees":"column",
+      "students":"20",
+      "instrument":"column",
+      "description":"column",
+      "status":"Active"
+
+    },
+    {
+      "id": 5,
+      
+      "name": "column",
+      "instructor":"column",
+      "date":"column",
+      "fees":"column",
+      "students":"20",
+      "instrument":"column",
+      "description":"column",
+      "status":"Active"
+
+    },
+    {
+      "id": 6,
+      
+      "name": "column",
+      "instructor":"column",
+      "date":"column",
+      "fees":"column",
+      "students":"20",
+      "instrument":"column",
+      "description":"column",
+      "status":"Active"
+
+    },
+    {
+      "id": 7,
+      
+      "name": "column",
+      "instructor":"column",
+      "date":"column",
+      "fees":"column",
+      "students":"20",
+      "instrument":"column",
+      "description":"column",
+      "status":"Active"
+
+    }
+   
+  ],
   "bestgrf": {
     "name": "typicode"
   }
