@@ -1,80 +1,133 @@
 import React from 'react'
-
+import { useEffect } from 'react'
+import { useState } from 'react'
 const Overview = () => {
+  const [info, setInfo]=useState([])
+  const[latest,setLatest]=useState([])
+  const [best,setBest]=useState([])
+  useEffect(()=>{
+    fetch("http://localhost:3000/info")
+    .then((res)=>res.json())
+    .then((data)=>{
+      console.log(data)
+      setInfo(data)
+    })
+
+  },[])
+  useEffect(()=>{
+      fetch("http://localhost:3000/latest")
+      .then((res)=>res.json())
+    .then((data)=>{
+      console.log(data)
+      setLatest(data)
+    })
+  },[])
+  useEffect(()=>{
+    fetch("http://localhost:3000/best")
+    .then((res)=>res.json())
+  .then((data)=>{
+    console.log(data)
+    setBest(data)
+  })
+},[])
   return (
-    <div>
-           <p className='text-3xl text-zinc-700/50 font-medium'>Overview</p>
+    <div className='bg-slate-50 '>
+           <p className='text-3xl text-zinc-700/50 font-medium mt-12 mb-10'>Overview</p>
       <div className='flex'>
-        <div className='shadow-lg h-32 w-64 p-3 rounded-md'>
-           <div className='flex '>
-               <div className=' mr-4 pr-2 pl-2 pt-2  mt-5 rounded-full bg-green-300'><span class="material-symbols-outlined " style={{fontSize:"30px"}}  >
-                    group
-                     </span></div>
-             <div className='pt-4'><p className='text-2xl font-sans'>164</p>
-        
-                  <p className='font-sans text-xs font-medium text-gray-600'>Total Number of sudents</p></div>
-            </div>
-                 <p className='text-right mt-3 text-xs text-red-800 '>View</p>
-        </div>
+       {
+        info.map((ele,index)=>{
+         return(
+          <div className='shadow-lg h-32 w-64 p-3 rounded-md mr-6 bg-white' key={index}>
+          <div className='flex '>
+              <div className=' mr-4 pr-2 pl-2 pt-2  mt-5 rounded-full bg-green-300'><span class="material-symbols-outlined " style={{fontSize:"30px"}}  >
+                   group
+                    </span></div>
+            <div className='pt-4'><p className='text-2xl font-sans'>{ele.number}</p>
+       
+                 <p className='font-sans text-xs font-medium text-gray-600'>{ele.title}</p></div>
+           </div>
+                <p className='text-right mt-3 text-xs text-red-800 '>View</p>
+       </div>
+         )
+        })
+       }
 
       </div>
 
-      <div className='mt-10'>
+      <div className='mt-10 mb-3'>
       <p className='text-1xl text-zinc-700/50 font-medium'>LATEST ENROLMENTS</p>
        <p className='text-right text-red-800'>View All Courses</p>
       </div>
 
       
-      <table className='shadow-lg w-full '>
-        <thead className='mb-4'>
-          <tr className='mb-4'>
-            <th>bhjfd</th>
-            <th>bhjfd</th>
-            <th>bhjfd</th>
-            <th>bhjfd</th>
-            <th>bhjfd</th>
+      <table className='shadow-lg w-full bg-white pb-6'>
+        <thead className=''>
+          <tr className=' border-b-2 '>
+            <th className='pt-9 pb-4 '>Enr. No</th>
+            <th className='pt-9 pb-4'>S. Name</th>
+            <th className='pt-9 pb-4'>C. Name</th>
+            <th className='pt-9 pb-4'>Fees</th>
+            <th className='pt-9 pb-4'>Enr. Date</th>
           </tr>
         </thead>
         <tbody>
-          <tr className='mb-4 '>
-            <td className='text-center '>hvdsvcsj</td>
-            
-            <td className='text-center p-4'>hvdsvcsj</td>
-            <td className='text-center p-4'>hvdsvcsj</td>
-            <td className='text-center'>hvdsvcsjfv</td>
-            <td className='text-center'>hvdsvcsj</td>
-          </tr>
           
-          <tr>
-            <td className='text-center p-3'>hvdsvcsj</td>
-            <td className='text-center'>hvdsvcsj</td>
-            <td className='text-center'>hvdsvcsj</td>
-            <td className='text-center'>hvdsvcsj</td>
-            <td className='text-center'>hvdsvcsj</td>
-          </tr>
-          <tr>
-            <td className='text-center'>hvdsvcsj</td>
-            <td className='text-center'>hvdsvcsj</td>
-            <td className='text-center'>hvdsvcsj</td>
-            <td className='text-center'>hvdsvcsj</td>
-            <td className='text-center'>hvdsvcsj</td>
-          </tr> 
-          <tr> 
-            <td className='text-center'>hvdsvcsj</td>
-            <td className='text-center'>hvdsvcsj</td>
-            <td className='text-center'>hvdsvcsj</td>
-            <td className='text-center'>hvdsvcsj</td>
-            <td className='text-center'>hvdsvcsj</td>
-          </tr> 
-          <tr> 
-            <td className='text-center'>hvdsvcsj</td>
-            <td className='text-center'>hvdsvcsj</td>
-            <td className='text-center'>hvdsvcsj</td>
-            <td className='text-center'>hvdsvcsj</td>
-            <td className='text-center'>hvdsvcsj</td>
-          </tr> 
+          
+          {
+            latest.map((ele,index)=>{
+             return(
+              <tr className='border-b-2' key={index}>
+              <td className='text-center pb-4 '>{ele.enr}</td>
+              <td className='text-center'>{ele.sname}</td>
+              <td className='text-center'>{ele.cname}</td>
+              <td className='text-center'>{ele.fees}</td>
+              <td className='text-center'>{ele.date}</td>
+
+            </tr>
+             )
+            })
+          }
         </tbody>
       </table>
+
+      <div className='mt-10 mb-1'>
+      <p className='text-1xl text-zinc-700/50 font-medium'>BEST STUDENTS</p>
+       <p className='text-right text-red-800'>View All Courses</p>
+      </div>
+       
+
+      <table className='shadow-lg h-80 w-full bg-white pb-6 mb-12'>
+        <thead className=''>
+          <tr className=' border-b-2 '>
+            <th className='pt-9 pb-4 '>Reg. No</th>
+            <th className='pt-9 pb-4'>F. Name</th>
+            <th className='pt-9 pb-4'>L. Name</th>
+            <th className='pt-9 pb-4'>Courses #</th>
+            <th className='pt-9 pb-4'>Total Fees</th>
+            <th className='pt-9 pb-4'>Reg. Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          
+          {
+            best.map((ele,index)=>{
+             return(
+              <tr className='border-b-2' key={index}>
+              <td className='text-center pb-4 '>{ele.enr}</td>
+              <td className='text-center'>{ele.sname}</td>
+              <td className='text-center'>{ele.cname}</td>
+              <td className='text-center'>{ele.courses}</td>
+              <td className='text-center'>{ele.fees}</td>
+              <td className='text-center'>{ele.date}</td>
+
+            </tr>
+             )
+            })
+          }
+        </tbody>
+      </table>
+      
     </div>
   )
 }

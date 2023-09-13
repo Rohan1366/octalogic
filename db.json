@@ -1,19 +1,126 @@
 {
-  "posts": [
+  "info": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "title": "Total Number Of Students",
+      "number": "160"
+    },
+    {
+      "id": 2,
+      "title": "Total Number Of Courses",
+      "number": "12"
+    },
+    {
+      "id": 3,
+      "title": "Total Amount Earned",
+      "number": "$2000"
+    },
+    {
+      "id": 4,
+      "title": "Best Performing Course",
+      "number": "Guitar"
+    },
+    {
+      "id": 5,
+      "title": "Worst Performing Course",
+      "number": "Flute"
     }
+    
   ],
-  "comments": [
+  "latest": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "enr": "74537",
+      "sname": "Ghadge",
+      "cname":"Rohan",
+      "date":"10/12/2023",
+      "fees":"$200"
+    },
+    {
+      "id": 2,
+      "enr": "74345",
+      "sname": "column",
+      "cname":"column",
+      "date":"column",
+      "fees":"column"
+    },
+    {
+      "id": 3,
+      "enr": "74345",
+      "sname": "column",
+      "cname":"column",
+      "date":"column",
+      "fees":"column"
+    },
+    {
+      "id": 4,
+      "enr": "74345",
+      "sname": "column",
+      "cname":"column",
+      "date":"column",
+      "fees":"column"
+    },
+    {
+      "id": 5,
+      "enr": "74345",
+      "sname": "column",
+      "cname":"column",
+      "date":"column",
+      "fees":"column"
     }
+   
+   
   ],
-  "profile": {
+  "best": [
+    {
+      "id": 1,
+      "enr": "83729",
+      "sname": "pooja",
+      "cname":"Jagatap",
+      "date":"10/12/2023",
+      "fees":"$100",
+      "courses":"3"
+    },
+    {
+      "id": 2,
+      "enr": "74345",
+      "sname": "column",
+      "cname":"column",
+      "date":"column",
+      "fees":"column",
+      "courses":"3"
+    },
+    {
+      "id": 3,
+      "enr": "74345",
+      "sname": "column",
+      "cname":"column",
+      "date":"column",
+      "fees":"column",
+      "courses":"3"
+    },
+    {
+      "id": 4,
+      "enr": "74345",
+      "sname": "column",
+      "cname":"column",
+      "date":"column",
+      "fees":"column",
+      "courses":"3"
+    },
+    {
+      "id": 5,
+      "enr": "74345",
+      "sname": "column",
+      "cname":"column",
+      "date":"column",
+      "fees":"column",
+      "courses":"3"
+    }
+   
+   
+  ],
+  "bestgrf": {
     "name": "typicode"
   }
 }
