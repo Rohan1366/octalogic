@@ -3,42 +3,15 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import data from'../Components/db.json'
 const Overview = () => {
-  const [info, setInfo]=useState([])
-  const[latest,setLatest]=useState([])
-  const [best,setBest]=useState([])
-  useEffect(()=>{
-    fetch("http://localhost:3000/info")
-    .then((res)=>res.json())
-    .then((data)=>{
-      console.log(data)
-      setInfo(data)
-    })
-
-  },[])
-  useEffect(()=>{
-      fetch("http://localhost:3000/latest")
-      .then((res)=>res.json())
-    .then((data)=>{
-      console.log(data)
-      setLatest(data)
-    })
-  },[])
-  useEffect(()=>{
-    fetch("http://localhost:3000/best")
-    .then((res)=>res.json())
-  .then((data)=>{
-    console.log(data)
-    setBest(data)
-  })
-},[])
+  
   return (
     <div className='bg-slate-50 '>
            <p className='text-3xl text-zinc-700/50 font-medium mt-12 mb-10'>Overview</p>
-      <div className='flex'>
+      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5'>
        {
         data.info.map((ele,index)=>{
          return(
-          <div className='shadow-lg h-32 w-64 p-3 rounded-md mr-6 bg-white' key={index}>
+          <div className='shadow-lg h-32 w-64 p-3 rounded-md mr-2 bg-white mb-3 lg:44' key={index}>
           <div className='flex '>
               <div className=' mr-4 pr-2 pl-2 pt-2  mt-5 rounded-full bg-green-300'><span class="material-symbols-outlined " style={{fontSize:"30px"}}  >
                    group

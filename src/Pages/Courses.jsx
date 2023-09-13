@@ -28,7 +28,7 @@ const Courses = () => {
     setShowForm(!showForm);
   };
   return (
-    <div className='h-full ml-6'>
+    <div className='h-full '>
       <p className='text-3xl text-zinc-700/50 font-medium mt-12 mb-10'>Courses</p>
       <div className='mt-10 mb-12 '>
       <p className='text-1xl text-zinc-700/50 font-medium '>COURSE LIST</p>

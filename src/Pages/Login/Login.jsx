@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import Register from '../Register/Register'
-import  './Login.css'
+
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 const Login = () => {
